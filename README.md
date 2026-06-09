@@ -1,98 +1,105 @@
-# 🌟 OKROSHKA SERVER ENGINE (Сборка Сервера Java & Bedrock)
+# 🌟 OKROSHKA SERVER ENGINE (Java & Bedrock Server Build)
 
-Добро пожаловать в официальный репозиторий проекта **OKROSHKA SERVER ENGINE**! 
+Welcome to the official repository of the **OKROSHKA SERVER ENGINE** project!
 
-Это готовая, чистая и полностью оптимизированная сборка сервера Minecraft, предназначенная для быстрого запуска игрового мира. Сборка создана для того, чтобы объединить игроков с компьютеров (Java) и телефонов/планшетов (Bedrock/PE) в одном уютном мире без лагов, сложных настроек и душного прописывания кодов. Вход настроен для любых пиратских лаунчеров без обязательной авторизации Xbox/Microsoft.
-
----
-
-## 🛠️ Что входит в сборку (Установленные плагины)
-
-Внутри сервера уже установлены и настроены самые топовые плагины:
-*   **Geyser-Spigot** — обеспечивает бесшовный вход на сервер для игроков с мобильных устройств и консолей.
-*   **ViaVersion** — позволяет заходить на сервер с более новых версий игры, чем версия самого ядра.
-*   **ViaBackwards** — обеспечивает поддержку и вход со старых версий игры.
-*   **SkinRestorer** — возвращает отображение скинов игроков, даже если все играют на пиратских лаунчерах.
+This is a ready-to-use, clean, and fully optimized Minecraft server build designed for a quick launch of your game world. This build is created to seamlessly connect PC players (Java Edition) and mobile/tablet players (Bedrock/Pocket Edition) in one cozy world without lags, complicated setups, or tedious port forwarding. It is pre-configured to support any cracked launchers without requiring an Xbox/Microsoft account login.
 
 ---
 
-## 🚀 Два способа запуска сервера
+## 🛠️ Features & Pre-installed Plugins
 
-### Способ 1. Обычный запуск через CMD (Стандартный)
-1. Скачайте этот репозиторий кнопкой **Code -> Download ZIP** и распакуйте папку `MineServer` в любое удобное место (например, на Рабочий стол).
-2. Просто дважды кликните по файлу **`start.bat`** внутри папки. Откроется обычная чёрная консоль.
-
-### Способ 2. Запуск через красивую графическую панель 👑
-Вы можете запустить сервер через специальную продвинутую утилиту с удобным графическим интерфейсом и полем для ввода команд.
-1. Убедитесь, что на вашем компьютере установлен **Python**.
-2. Перейдите в папку сервера и дважды кликните по файлу **`manager.pyw`**.
-3. Откроется красивое серое окно. Нажмите кнопку **RUN SERVER** по центру — кнопка скроется, и внутри программы побегут строчки кода запуска, а внизу появится удобная строка для ввода админ-команд!
+The server core comes with top-tier plugins already installed and configured:
+*   **Geyser-Spigot** — Provides a seamless connection to the server for mobile devices and consoles.
+*   **ViaVersion** — Allows players to join the server using game versions newer than the server core itself.
+*   **ViaBackwards** — Ensures backward compatibility, allowing players to join from older versions of Minecraft.
+*   **SkinRestorer** — Restores and displays player skins, even if everyone is playing on cracked launchers.
 
 ---
 
-## ⚙️ Как настроить сервер под себя
+## 🚀 How to Launch the Server in 5 Seconds
 
-Все настройки сервера меняются очень легко через Блокнот. Откройте файл **`server.properties`** и измените нужные строчки:
+1. Download this repository by clicking the green **Code -> Download ZIP** button and unpack the `MineServer` folder anywhere you like (e.g., to your Desktop).
+2. Make sure you have the latest version of **Java** installed on your computer.
+3. Simply double-click the **`start.bat`** file inside the folder.
+4. A console window will open, the startup lines will run, and once you see the `Done!` message, your server is ready to play!
 
-### 🌍 1. Как прописать свой Сид (Генерацию мира)
-Найдите строку `level-seed=` и впишите туда любой ваш любимый сид:
+---
+
+## ⚙️ How to Customize Your Server
+
+You can easily change all server settings using Notepad. Open the **`server.properties`** file and edit the necessary lines:
+
+### 🌍 1. Setting Up Your Custom Seed
+Find the line `level-seed=` and enter any seed you want to generate:
 ```properties
 level-seed=2422215857861955386
 ```
-*Если оставить эту строчку пустой, Minecraft при первом запуске сам сгенерирует абсолютно случайный и уникальный мир!*
+*If you leave this line completely empty, Minecraft will automatically generate a random and unique world on its very first launch!*
 
-### 🎮 2. Режим игры по умолчанию
-Найдите строку `gamemode=` и укажите нужный режим:
-*   `survival` — Выживание (стоит по умолчанию)
-*   `creative` — Творческий режим (Креатив)
+### 🎮 2. Default Game Mode
+Find the line `gamemode=` and specify the desired mode for new players:
+*   `survival` — Survival Mode (set by default)
+*   `creative` — Creative Mode
 
-### ⚔️ 3. Изменение сложности
-Найдите строку `difficulty=` и укажите уровень опасности монстров:
-*   `peaceful` — Мирный режим
-*   `normal` — Нормальный (стоит по умолчанию)
-*   `hard` — Сложный
+### ⚔️ 3. Changing Difficulty
+Find the line `difficulty=` and specify the threat level of monsters:
+*   `peaceful` — Peaceful Mode
+*   `normal` — Normal Mode (set by default)
+*   `hard` — Hard Mode
 
----
+### 🎒 4. Keeping Inventory on Death
+To ensure players don't lose their hard-earned resources, inventory saving is enabled by default. This is handled by the following line:
+```properties
+gamerule.keepInventory=true
+```
 
-## 💻 Полный справочник консольных команд (Гайд для Админа)
-
-Вы можете писать эти команды прямо в текстовую строку консоли запущенного сервера (без знака `/`) или внутри самой игры (со знаком `/` в начале, если у вас есть права оператора).
-
-### 👑 1. Управление правами и доступом
-*   `op <ник_игрока>` — Выдать игроку права администратора (дает доступ ко всем командам из игры).
-*   `deop <ник_игрока>` — Забрать права администратора у игрока.
-*   `whitelist add <ник_игрока>` — Добавить игрока в белый список.
-
-### 🚫 2. Наказания и модерация
-*   `kick <ник_игрока> [причина]` — Принудительно выгнать игрока с сервера.
-*   `ban <ник_игрока> [причина]` — Заблокировать (забанить) игрока на сервере навсегда.
-*   `pardon <ник_игрока>` — Разбанить (амнистировать) игрока.
-
-### 🔮 3. Управление игровым процессом на ходу
-*   `gamemode survival [ник]` — Переключить режим игры в Выживание.
-*   `gamemode creative [ник]` — Переключить режим игры в Творческий (Креатив).
-*   `difficulty <peaceful/easy/normal/hard>` — Мгновенно изменить сложность игры на сервере.
-*   `time set <day/night>` — Изменить время суток в мире (сделать день или ночь).
-*   `weather <clear/rain/thunder>` — Изменить погоду (ясно, дождь, гроза).
-
-### 🎒 4. Перемещение, вещи и эффекты
-*   `tp <игрок_1> <игрок_2>` — Телепортировать Игрока_1 к Игроку_2.
-*   `tp <игрок> <X> <Y> <Z>` — Телепортировать игрока на точные координаты в мире.
-*   `give <игрок> <предмет> [количество]` — Выдать любой блок или вещь из воздуха (например: `give @a elytra 1` — выдать всем элитры).
-*   `effect give <игрок> <эффект> [время]` — Наложить суперсилу (например: `effect give @s night_vision 9999` — бесконечное ночное зрение).
-
-### 💾 5. Обслуживание и выключение сервера
-*   `save-all` — Принудительно сохранить весь игровой мир, все постройки и инвентари игроков на жесткий диск.
-*   `stop` — **Самая главная команда**. Корректно сохраняет все чанки, постройки, инвентари и безопасно закрывает сервер. *Всегда закрывайте сервер только этой командой, чтобы не повредить файлы мира!*
+### 🖥️ 5. Advanced Console Interface (Optional)
+If you prefer a clean graphical dashboard instead of a blank black CMD window, you can run the server via a custom Python panel:
+1. Make sure **Python** is installed on your PC.
+2. Double-click the **`manager.pyw`** file inside the server folder.
+3. Click the green **RUN SERVER** button in the center. The button will disappear, the server logs will stream inside the app, and a convenient admin command input box will appear at the bottom!
 
 ---
 
-## 🌎 Лицензия и Авторство
+## 💻 Full Console Command Reference (Admin Guide)
 
-*   **Автор проекта**: `0KR0$HK4`
-*   **Лицензия**: Проект является полностью открытым (**Open Source**) и **не имеет никаких авторских прав**.
+You can type these commands directly into your server console text field (without the `/` prefix) or right inside the game chat (with the `/` prefix if you have Operator rights) [5].
 
-Вы имеете полное и абсолютное право скачивать эту сборку, изменять файлы кода под любые свои нужды, использовать её для игры с друзьями и семьёй, а также копировать, перевыпускать и продавать её в интернете без каких-либо ограничений!
+### 👑 1. Rights & Access Management
+*   `op <player_name>` — Grant a player administrator rights (gives access to all commands in-game) [5].
+*   `deop <player_name>` — Revoke a player's administrator rights [5].
+*   `whitelist add <player_name>` — Add a player to the server whitelist.
+
+### 🚫 2. Moderation & Bans
+*   `kick <player_name> [reason]` — Forcefully disconnect a player from the server.
+*   `ban <player_name> [reason]` — Permanently ban a player from the server [5].
+*   `pardon <player_name>` — Unban a player [5].
+
+### 🔮 3. Live Gameplay Management
+*   `gamemode survival [player]` — Switch a player's game mode to Survival [5].
+*   `gamemode creative [player]` — Switch a player's game mode to Creative [5].
+*   `difficulty <peaceful/easy/normal/hard>` — Instantly change the server difficulty.
+*   `time set <day/night>` — Change the time of day in the world.
+*   `weather <clear/rain/thunder>` — Change the weather (clear skies, rain, or a thunderstorm).
+
+### 🎒 4. Teleportation, Items & Effects
+*   `tp <player_1> <player_2>` — Teleport Player_1 to Player_2's location.
+*   `tp <player> <X> <Y> <Z>` — Teleport a player to exact coordinates in the world.
+*   `give <player> <item> [amount]` — Spawn any block or item from thin air (e.g., `give @a elytra 1` to give elytra to everyone).
+*   `effect give <player> <effect> [duration]` — Infuse a player with a superpower (e.g., `effect give @s night_vision 9999` for permanent night vision).
+
+### 💾 5. Server Maintenance & Shutdown
+*   `save-all` — Forcefully save the current world state, all player builds, and inventories to the hard drive.
+*   `stop` — **The most important command**. It correctly saves all chunks, blocks, inventories, and safely shuts down the server [5]. *Always close your server using this command to prevent world file corruption!* [5]
 
 ---
-*Приятной игры и крутых приключений в мире OKROSHKA ENGINE! 🎮💎⛏️*
+
+## 🌎 License & Credits
+
+*   **Project Author**: `0KR0$HK4`
+*   **License**: This project is completely **Open Source** and **free of any copyright restrictions**.
+
+You have the absolute and unconditional right to download this build, modify any configuration or code files for your needs, use it to play with friends and family, as well as copy, re-release, or distribute it on the internet without any limitations or royalties to the author!
+
+---
+*Have fun playing and have great adventures in the world of OKROSHKA ENGINE! 🎮💎⛏️*
