@@ -1,7 +1,20 @@
-# Minecraft Server folders
+# Исключаем файлы самого мира (чтобы игроки генерировали свои миры)
 world/
 world_nether/
 world_the_end/
+
+# Исключаем системные логи и кэш сервера
 logs/
 crash-reports/
 cache/
+.java-version
+
+# Исключаем временные файлы Python и Visual Studio (если они остались)
+__pycache__/
+*.pyc
+bin/
+obj/
+.vs/
+
+# Исключаем авто-генерируемый кэш плагинов
+plugins/Geyser-Spigot/dump/
